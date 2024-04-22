@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <vector>
 #include <time.h>
@@ -7,10 +5,12 @@
 using namespace std;
 
 // Função para gerar um vetor aleatório de números inteiros
-vector<int> gerarVetorAleatorio(int tamanho) {
+vector<int> gerarVetorAleatorio(int tamanho)
+{
   vector<int> vetor(tamanho);
 
-  for (int i = 0; i < tamanho; i++) {
+  for (int i = 0; i < tamanho; i++)
+  {
     vetor[i] = rand() % 1000000;
   }
 
@@ -18,10 +18,14 @@ vector<int> gerarVetorAleatorio(int tamanho) {
 }
 
 // Função para ordenar um vetor usando o algoritmo Bubble Sort
-void bubbleSort(vector<int>& vetor) {
-  for (int i = 0; i < vetor.size() - 1; i++) {
-    for (int j = 0; j < vetor.size() - i - 1; j++) {
-      if (vetor[j] > vetor[j + 1]) {
+void bubbleSort(vector<int> &vetor)
+{
+  for (int i = 0; i < vetor.size() - 1; i++)
+  {
+    for (int j = 0; j < vetor.size() - i - 1; j++)
+    {
+      if (vetor[j] > vetor[j + 1])
+      {
         swap(vetor[j], vetor[j + 1]);
       }
     }
@@ -29,12 +33,16 @@ void bubbleSort(vector<int>& vetor) {
 }
 
 // Função para ordenar um vetor usando o algoritmo Selection Sort
-void selectionSort(vector<int>& vetor) {
-  for (int i = 0; i < vetor.size() - 1; i++) {
+void selectionSort(vector<int> &vetor)
+{
+  for (int i = 0; i < vetor.size() - 1; i++)
+  {
     int menorIndice = i;
 
-    for (int j = i + 1; j < vetor.size(); j++) {
-      if (vetor[j] < vetor[menorIndice]) {
+    for (int j = i + 1; j < vetor.size(); j++)
+    {
+      if (vetor[j] < vetor[menorIndice])
+      {
         menorIndice = j;
       }
     }
@@ -43,16 +51,18 @@ void selectionSort(vector<int>& vetor) {
   }
 }
 
-
-
 // Função para ordenar um vetor usando o algoritmo Quick Sort
-void quickSort(vector<int>& vetor, int inicio, int fim) {
-  if (inicio < fim) {
+void quickSort(vector<int> &vetor, int inicio, int fim)
+{
+  if (inicio < fim)
+  {
     int pivo = vetor[fim];
     int i = inicio - 1;
 
-    for (int j = inicio; j < fim; j++) {
-      if (vetor[j] <= pivo) {
+    for (int j = inicio; j < fim; j++)
+    {
+      if (vetor[j] <= pivo)
+      {
         i++;
         swap(vetor[i], vetor[j]);
       }
@@ -63,12 +73,15 @@ void quickSort(vector<int>& vetor, int inicio, int fim) {
     quickSort(vetor, i + 2, fim);
   }
 }
-void quickSortWrapper(vector<int>& vetor) {
+void quickSortWrapper(vector<int> &vetor)
+{
   quickSort(vetor, 0, vetor.size() - 1); // Assuming bubbleSort takes start and end indices
 }
 // Função para ordenar um vetor usando o algoritmo Merge Sort
-void mergeSort(vector<int>& vetor, int inicio, int fim) {
-  if (inicio < fim) {
+void mergeSort(vector<int> &vetor, int inicio, int fim)
+{
+  if (inicio < fim)
+  {
     int meio = (inicio + fim) / 2;
 
     mergeSort(vetor, inicio, meio);
@@ -78,36 +91,43 @@ void mergeSort(vector<int>& vetor, int inicio, int fim) {
 
     int i = inicio, j = meio + 1, k = 0;
 
-    while (i <= meio && j <= fim) {
-      if (vetor[i] <= vetor[j]) {
+    while (i <= meio && j <= fim)
+    {
+      if (vetor[i] <= vetor[j])
+      {
         vetorTemp[k++] = vetor[i++];
-      } else {
+      }
+      else
+      {
         vetorTemp[k++] = vetor[j++];
       }
     }
 
-    while (i <= meio) {
+    while (i <= meio)
+    {
       vetorTemp[k++] = vetor[i++];
     }
 
-    while (j <= fim) {
+    while (j <= fim)
+    {
       vetorTemp[k++] = vetor[j++];
     }
 
-    for (int i = inicio; i <= fim; i++) {
+    for (int i = inicio; i <= fim; i++)
+    {
       vetor[i] = vetorTemp[i - inicio];
     }
   }
 }
 
-void mergeSortWrapper(vector<int>& vetor) {
+void mergeSortWrapper(vector<int> &vetor)
+{
   mergeSort(vetor, 0, vetor.size() - 1); // Assuming bubbleSort takes start and end indices
 }
 
-
-
 // Função para medir o tempo de execução de um algoritmo de ordenação
-double medirTempoOrdenacao(vector<int>& vetor, void (*funcaoOrdenacao)(vector<int>&)) {
+double medirTempoOrdenacao(vector<int> &vetor, void (*funcaoOrdenacao)(vector<int> &))
+{
   clock_t inicio, fim;
 
   // Faz uma cópia do vetor desordenado
@@ -126,7 +146,8 @@ double medirTempoOrdenacao(vector<int>& vetor, void (*funcaoOrdenacao)(vector<in
   return tempoGasto;
 }
 
-int main() {
+int main()
+{
   // Variáveis para armazenar os tempos de ordenação
   double tempoBubbleSort, tempoSelecao, tempoInsercao, tempoQuickSort, tempoMergeSort;
 

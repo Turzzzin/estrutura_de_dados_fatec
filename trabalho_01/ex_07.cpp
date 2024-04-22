@@ -1,14 +1,3 @@
-/*
-Uma empresa de informatica comercializa um programa para gerenciar o cadastro de informações dos funcionarios de empresas. Uma determinada empresa, com 8 departamentos, adquiriu o programa e, ao executar o programa pela primeira vez, informou o numero de funcionarios e as informações de cada um deles. As informações armazenadas são: nome(string), idade(inteiro), sexo(caractere), tempo de casa em anos (inteiro) e salario(em reais). Escreva um programa em C++ que realize as seguintes operações:
-a) Procurar no cadastro e informar todos os dados do funcionario com nome informado pelo usuario
-b) Informar o numero de funcionarios de determinado departamento
-c) O numero de funcionarios do sexo feminino
-d) Exibir os dados dos funcionarios com menor e com maior tempo de casa
-e) Exibir o salario medio, por departamento
-f) Exibir a idade media, por departamento
-g) Exibir o numero de funcionarios do sexo masculino e feminino, com idade entre 29 e 35 anos.
-*/
-
 #include <iostream>
 #include <string>
 #include <vector>
