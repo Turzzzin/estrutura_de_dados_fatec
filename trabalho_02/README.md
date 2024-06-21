@@ -5,11 +5,11 @@
 ***
 # Exercícios:
 01) Faça o seguinte menu interativo com o usuário para a chamada das funções de um programa que simule uma pilha de floats:
-0: Sair
-1: Inserir itens
-2: Remover itens
-3: Imprimir tamanho
-4: Imprimir item do topo
+* 0: Sair
+* 1: Inserir itens
+* 2: Remover itens
+* 3: Imprimir tamanho
+* 4: Imprimir item do topo
 Entre com a opcao desejada:
 
 Importante:
